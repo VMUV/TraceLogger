@@ -1,1 +1,4 @@
-﻿
+﻿  stdafx.cpp
+  TraceLoggerUnitTests.cpp
+     Creating library C:\Users\warre\Repositories\VMUV\TraceLogger\Trace Logger Cpp\x64\Debug\Trace Logger Cpp Tests.lib and object C:\Users\warre\Repositories\VMUV\TraceLogger\Trace Logger Cpp\x64\Debug\Trace Logger Cpp Tests.exp
+  Trace Logger Cpp Tests.vcxproj -> C:\Users\warre\Repositories\VMUV\TraceLogger\Trace Logger Cpp\x64\Debug\Trace Logger Cpp Tests.dll
