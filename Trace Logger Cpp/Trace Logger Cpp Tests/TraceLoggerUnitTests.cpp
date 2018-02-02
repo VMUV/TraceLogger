@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "string.h"
-#include "TraceLogger.h"
+#include "../Trace Logger Cpp/TraceLogger.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace Trace_Logger_Cpp;
