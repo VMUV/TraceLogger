@@ -10,8 +10,10 @@ Trace Logger CSharp/Trace Logger CSharp Tests/obj/
 Trace Logger Cpp/.vs/
 Trace Logger Cpp/Trace Logger Cpp/Debug/
 Trace Logger Cpp/Trace Logger Cpp/Release/
+Trace Logger Cpp/Trace Logger Cpp/x64/
 Trace Logger Cpp/Debug/
 Trace Logger Cpp/Release/
-Trace Logger/Trace Logger Cpp Tests/Debug/
-Trace Logger/Trace Logger Cpp Tests/Release/
-Trace Logger/Trace Logger Cpp Tests/x64/
+Trace Logger Cpp/x64/
+Trace Logger Cpp/Trace Logger Cpp Tests/Debug/
+Trace Logger Cpp/Trace Logger Cpp Tests/Release/
+Trace Logger Cpp/Trace Logger Cpp Tests/x64/
