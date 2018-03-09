@@ -5,3 +5,12 @@ Trace Logger CSharp/Trace Logger CSharp/obj/
 Trace Logger CSharp/TestResults/
 Trace Logger CSharp/Trace Logger CSharp Tests/bin/
 Trace Logger CSharp/Trace Logger CSharp Tests/obj/
+
+#Cpp Project
+Trace Logger Cpp/Trace Logger Cpp/Debug/
+Trace Logger Cpp/Trace Logger Cpp/Release/
+Trace Logger Cpp/Debug/
+Trace Logger Cpp/Release/
+Trace Logger/Trace Logger Cpp Tests/Debug/
+Trace Logger/Trace Logger Cpp Tests/Release/
+Trace Logger/Trace Logger Cpp Tests/x64/
