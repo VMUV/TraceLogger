@@ -18,7 +18,7 @@ namespace VMUV_TCP_UnitTests
         public void TestBuildTraceLoggerMessage()
         {
             TraceLogger logger = new TraceLogger();
-            TraceLoggerMessage msg = logger.BuildMessage(moduleName, methodName, message);
+            TraceLoggerMessage msg = TraceLogger.BuildMessage(moduleName, methodName, message);
             Assert.AreEqual(moduleName, msg.moduleName);
             Assert.AreEqual(methodName, msg.methodName);
             Assert.AreEqual(message, msg.message);
@@ -36,7 +36,7 @@ namespace VMUV_TCP_UnitTests
         public void TestQueueMessage()
         {
             TraceLogger logger = new TraceLogger();
-            TraceLoggerMessage msg = logger.BuildMessage(moduleName, methodName, message);
+            TraceLoggerMessage msg = TraceLogger.BuildMessage(moduleName, methodName, message);
             
             // buffer maximum amount of messages
             for (int i = 0; i < logger.GetBuffSize(); i++)
@@ -50,7 +50,7 @@ namespace VMUV_TCP_UnitTests
         public void TestIsRoomInBuff()
         {
             TraceLogger logger = new TraceLogger();
-            TraceLoggerMessage msg = logger.BuildMessage(moduleName, methodName, message);
+            TraceLoggerMessage msg = TraceLogger.BuildMessage(moduleName, methodName, message);
 
             while (logger.IsRoomInBuff())
                 Assert.AreEqual(true, logger.QueueMessage(msg));
@@ -62,7 +62,7 @@ namespace VMUV_TCP_UnitTests
         public void TestMessageCount()
         {
             TraceLogger logger = new TraceLogger();
-            TraceLoggerMessage msg = logger.BuildMessage(moduleName, methodName, message);
+            TraceLoggerMessage msg = TraceLogger.BuildMessage(moduleName, methodName, message);
 
             Assert.AreEqual(logger.HasMessages(), false);
             Assert.AreEqual(logger.GetNumMessagesQueued(), 0);
@@ -83,7 +83,7 @@ namespace VMUV_TCP_UnitTests
         public void TestDeQueueMessages()
         {
             TraceLogger logger = new TraceLogger();
-            TraceLoggerMessage msg = logger.BuildMessage(moduleName, methodName, message);
+            TraceLoggerMessage msg = TraceLogger.BuildMessage(moduleName, methodName, message);
 
             while (logger.IsRoomInBuff())
                 Assert.AreEqual(true, logger.QueueMessage(msg));
@@ -111,7 +111,7 @@ namespace VMUV_TCP_UnitTests
         public void TestDeQueueAllMessages()
         {
             TraceLogger logger = new TraceLogger();
-            TraceLoggerMessage msg = logger.BuildMessage(moduleName, methodName, message);
+            TraceLoggerMessage msg = TraceLogger.BuildMessage(moduleName, methodName, message);
 
             while (logger.IsRoomInBuff())
                 Assert.AreEqual(true, logger.QueueMessage(msg));
@@ -132,7 +132,7 @@ namespace VMUV_TCP_UnitTests
         public void TestQueueAndDeQueue()
         {
             TraceLogger logger = new TraceLogger();
-            TraceLoggerMessage msg = logger.BuildMessage(moduleName, methodName, message);
+            TraceLoggerMessage msg = TraceLogger.BuildMessage(moduleName, methodName, message);
 
             while (logger.IsRoomInBuff())
                 Assert.AreEqual(true, logger.QueueMessage(msg));
@@ -157,7 +157,7 @@ namespace VMUV_TCP_UnitTests
             TraceLoggerMessage[] rtnBuf = logger.GetAllMessages();
             Assert.AreEqual(rtnBuf.Length, logger.GetBuffSize() - 1);
 
-            msg = logger.BuildMessage(moduleName, methodName, message);
+            msg = TraceLogger.BuildMessage(moduleName, methodName, message);
             foreach (TraceLoggerMessage item in rtnBuf)
             {
                 Assert.AreEqual(item.moduleName, msg.moduleName);

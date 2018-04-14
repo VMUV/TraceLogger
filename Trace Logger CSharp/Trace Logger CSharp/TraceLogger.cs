@@ -73,18 +73,6 @@ namespace Trace_Logger_CSharp
             throw new IndexOutOfRangeException();
         }
 
-        public TraceLoggerMessage BuildMessage(string modName, string method, string msg)
-        {
-            TraceLoggerMessage rtn = new TraceLoggerMessage
-            {
-                moduleName = modName,
-                methodName = method,
-                message = msg
-            };
-
-            return rtn;
-        }
-
         public TraceLoggerMessage[] GetAllMessages()
         {
             TraceLoggerMessage[] rtn = messageList.ToArray();
@@ -107,6 +95,18 @@ namespace Trace_Logger_CSharp
             }
 
             _numMessagesQueued = 0;
+            return rtn;
+        }
+
+        public static TraceLoggerMessage BuildMessage(string modName, string method, string msg)
+        {
+            TraceLoggerMessage rtn = new TraceLoggerMessage
+            {
+                moduleName = modName,
+                methodName = method,
+                message = msg
+            };
+
             return rtn;
         }
 
