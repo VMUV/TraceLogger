@@ -60,9 +60,18 @@ Trace_Logger_Cpp::TraceLoggerMessage Trace_Logger_Cpp::TraceLogger::BuildMessage
 
 // for now this function will return a copy of the entire list. I will revisit this
 // if it turns out that we really do need the messages to be in the form of an array
-list<Trace_Logger_Cpp::TraceLoggerMessage> Trace_Logger_Cpp::TraceLogger::GetAllMessages()
+//list<Trace_Logger_Cpp::TraceLoggerMessage> Trace_Logger_Cpp::TraceLogger::GetAllMessages()
+//{
+//	list<Trace_Logger_Cpp::TraceLoggerMessage> rtn = messageList;
+//	messageList.clear();
+//
+//	_numMessagesQueued = 0;
+//	return rtn;
+//}
+vector<Trace_Logger_Cpp::TraceLoggerMessage> Trace_Logger_Cpp::TraceLogger::GetAllMessages()
 {
-	list<Trace_Logger_Cpp::TraceLoggerMessage> rtn = messageList;
+	vector<Trace_Logger_Cpp::TraceLoggerMessage> rtn;
+	rtn.assign(messageList.begin(), messageList.end());
 	messageList.clear();
 
 	_numMessagesQueued = 0;

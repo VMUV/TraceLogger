@@ -4,6 +4,7 @@
 
 #include <list>
 #include <string>
+#include <vector>
 
 #define INDEXOUTOFRANGEEXCEPTION 1
 
@@ -56,7 +57,8 @@ namespace Trace_Logger_Cpp
 
 		TraceLoggerMessage BuildMessage(string modName, string method, string msg);
 
-		list<Trace_Logger_Cpp::TraceLoggerMessage> Trace_Logger_Cpp::TraceLogger::GetAllMessages();
+//		list<Trace_Logger_Cpp::TraceLoggerMessage> Trace_Logger_Cpp::TraceLogger::GetAllMessages();
+		vector<Trace_Logger_Cpp::TraceLoggerMessage> GetAllMessages();
 
 		static string TraceLoggerMessageToString(TraceLoggerMessage msg);
 	};

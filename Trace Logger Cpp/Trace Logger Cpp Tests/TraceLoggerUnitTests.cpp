@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "string.h"
+#include <string>
+//#include "string.h"
 #include "../Trace Logger Cpp/TraceLogger.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -106,7 +107,8 @@ namespace TraceLoggerCppTests
 		TEST_METHOD(TestDeQueueAllMessagesEmptyList)
 		{
 			TraceLogger logger;
-			list<Trace_Logger_Cpp::TraceLoggerMessage> all = logger.GetAllMessages();
+//			list<Trace_Logger_Cpp::TraceLoggerMessage> all = logger.GetAllMessages();
+			vector<Trace_Logger_Cpp::TraceLoggerMessage> all = logger.GetAllMessages();
 			Assert::IsTrue(all.size() == 0);
 		}
 
@@ -121,12 +123,14 @@ namespace TraceLoggerCppTests
 
 			Assert::IsTrue(logger.GetNumMessagesQueued() == logger.GetBuffSize());
 
-			list<Trace_Logger_Cpp::TraceLoggerMessage> rtn = logger.GetAllMessages();
+//			list<Trace_Logger_Cpp::TraceLoggerMessage> rtn = logger.GetAllMessages();
+			vector<Trace_Logger_Cpp::TraceLoggerMessage> rtn = logger.GetAllMessages();
 			Assert::IsTrue(rtn.size() == logger.GetBuffSize());
 			Assert::IsTrue(logger.GetNumMessagesQueued() == 0);
 
-			list<Trace_Logger_Cpp::TraceLoggerMessage>::iterator itr;
-			for (itr = rtn.begin(); itr != rtn.end(); ++itr) 
+//			list<Trace_Logger_Cpp::TraceLoggerMessage>::iterator itr;
+			vector<Trace_Logger_Cpp::TraceLoggerMessage>::iterator itr;
+			for (itr = rtn.begin(); itr != rtn.end(); ++itr)
 			{
 				Trace_Logger_Cpp::TraceLoggerMessage item = *itr;
 
@@ -165,13 +169,15 @@ namespace TraceLoggerCppTests
 			Assert::IsFalse(testMsg.compare(rtn.message));
 
 			// get the rest and assure they are good
-			list<Trace_Logger_Cpp::TraceLoggerMessage> rtnBuf = logger.GetAllMessages();
+//			list<Trace_Logger_Cpp::TraceLoggerMessage> rtnBuf = logger.GetAllMessages();
+			vector<Trace_Logger_Cpp::TraceLoggerMessage> rtnBuf = logger.GetAllMessages();
 			Assert::IsTrue(rtnBuf.size() == logger.GetBuffSize() - 1);
 
 			msg = logger.BuildMessage(moduleName, methodName, message);
 
-			list<Trace_Logger_Cpp::TraceLoggerMessage>::iterator itr;
-			for (itr = rtnBuf.begin(); itr != rtnBuf.end(); ++itr) 
+//			list<Trace_Logger_Cpp::TraceLoggerMessage>::iterator itr;
+			vector<Trace_Logger_Cpp::TraceLoggerMessage>::iterator itr;
+			for (itr = rtnBuf.begin(); itr != rtnBuf.end(); ++itr)
 			{
 				Trace_Logger_Cpp::TraceLoggerMessage item = *itr;
 				Assert::IsFalse(moduleName.compare(item.moduleName));
